@@ -19,4 +19,5 @@ img {
 /* Resetear fuentes por defecto */
 body {
     line-height: 1;
+    flex-direction: column;
 }
