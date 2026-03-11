@@ -27,7 +27,7 @@ body {
     align-items: center;
 }
 
-form{
+.formulario{
     display: flex;
     flex-direction: column;
     align-items: center;
