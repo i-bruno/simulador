@@ -63,7 +63,11 @@ function simular() {
     const resultado = calcularPrepago(saldo, tasa, cuota, prepago);
 
     document.getElementById("resultado").innerHTML = `
+
         Capital precancelado: ${resultado.capitalReducido.toFixed(2)} UVA <br><br>
+
+        Costo por precancelación (3%): ${resultado.costoPrecancelacion.toFixed(2)} UVA <br>
+        Total que debés pagar al banco: <b>${resultado.totalAPagar.toFixed(2)} UVA</b> <br><br>
 
         Interés restante sin prepago: ${resultado.interesNormal.toFixed(2)} UVA <br>
         Interés restante con prepago: ${resultado.interesConPrepago.toFixed(2)} UVA <br><br>
@@ -71,7 +75,8 @@ function simular() {
         Ahorro de intereses: <b>${resultado.interesAhorrado.toFixed(2)} UVA</b> <br><br>
 
         Cuotas eliminadas: ${resultado.cuotasAhorradas}
-    `;
+
+`;
 }
 // function calcularCuota(capital, tasaAnual, cuotas) {
 
