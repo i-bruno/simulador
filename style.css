@@ -1,0 +1,22 @@
+/* Selector universal para aplicar a todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Fundamental para control de tamaños */
+}
+
+/* Restablecer estilos de listas */
+ul, ol {
+    list-style: none;
+}
+
+/* Mejorar visualización de imágenes */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Resetear fuentes por defecto */
+body {
+    line-height: 1;
+}
