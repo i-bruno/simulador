@@ -38,12 +38,17 @@ function calcularPrepago(saldo, tasa, cuota, prepago) {
 
     const cuotasAhorradas = escenarioNormal.cuotas - escenarioPrepago.cuotas;
 
+    const costoPrecanc = prepago * 0.03;
+    const totalPago = prepago + costoPrecanc;
+
     return {
         capitalReducido: prepago,
         interesNormal: escenarioNormal.interesTotal,
         interesConPrepago: escenarioPrepago.interesTotal,
         interesAhorrado: ahorroIntereses,
-        cuotasAhorradas: cuotasAhorradas
+        cuotasAhorradas: cuotasAhorradas,
+        costoPrecancelacion: costoPrecanc,
+        totalAPagar: totalPago
     };
 }
 
