@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Simulador de crédito UVA</title>
+</head>
+
+<body>
+    <h2>Simulador Precanc. Crédito UVA</h2>
+
+    <label>Saldo actual (UVA)</label>
+    <input id="saldo">
+
+    <label>Tasa anual (%)</label>
+    <input id="tasa">
+
+    <label>Cuotas restantes</label>
+    <input id="cuotas">
+
+    <label>Prepago (UVA)</label>
+    <input id="prepago">
+
+    <button onclick="simular()">Simular</button>
+
+    <h3>Resultados</h3>
+
+    <div id="resultado"></div>
+
+    <script src="simulador.js"></script>
+</body>
+
+</html>
