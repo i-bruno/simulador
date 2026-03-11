@@ -9,25 +9,28 @@
 </head>
 
 <body>
-    <h2>Simulador Precanc. Crédito UVA</h2>
+    <section class="usuario">
+        <h2>Simulador Precanc. Crédito UVA</h2>
+        <form action="">
+            <label>Saldo actual (UVA)</label>
+            <input id="saldo">
 
-    <label>Saldo actual (UVA)</label>
-    <input id="saldo">
+            <label>Tasa anual (%)</label>
+            <input id="tasa">
 
-    <label>Tasa anual (%)</label>
-    <input id="tasa">
+            <label>Cuotas restantes</label>
+            <input id="cuotas">
 
-    <label>Cuotas restantes</label>
-    <input id="cuotas">
+            <label>Prepago (UVA)</label>
+            <input id="prepago">
 
-    <label>Prepago (UVA)</label>
-    <input id="prepago">
-
-    <button onclick="simular()">Simular</button>
-
-    <h3>Resultados</h3>
-
-    <div id="resultado"></div>
+            <button onclick="simular()">Simular</button>
+        </form>
+    </section>
+    <section class="resultado">
+        <h3>Resultados</h3>
+        <div id="resultado"></div>
+    </section>
 
     <script src="simulador.js"></script>
 </body>
