@@ -79,12 +79,14 @@ function simular() {
 `;
 }
 
-async function obtenerDolar() {
+async function obtenerDolarOficial() {
 
-    const response = await fetch("https://dolarapi.com/v1/dolares/oficial");
+    const response = await fetch("https://dolarapi.com/v1/dolares");
     const data = await response.json();
 
-    return data.venta;
+    const oficial = data.find(d => d.casa === "oficial");
+
+    return oficial.venta;
 }
 
 async function obtenerUVA() {
@@ -95,19 +97,22 @@ async function obtenerUVA() {
     return data.valor;
 }
 
-async function cargarIndicadores() {
+async function cargarIndicadores(){
 
     try {
 
-        const dolar = await obtenerDolar();
+        const dolar = await obtenerDolarOficial();
         const uva = await obtenerUVA();
 
         document.getElementById("dolar-oficial").innerText = dolar.toFixed(2);
         document.getElementById("uva").innerText = uva.toFixed(2);
 
-    } catch (error) {
+    } catch(error) {
 
-        console.error("Error cargando indicadores", error);
+        console.error("Error cargando indicadores:", error);
+
+        document.getElementById("dolar-oficial").innerText = "error";
+        document.getElementById("uva").innerText = "error";
 
     }
 }
