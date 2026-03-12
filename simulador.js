@@ -80,15 +80,15 @@ function simular() {
         </div>
         <div class="m-1 border rounded-sm">
             <h4>Luego del adelanto</h4>
-            Saldo de capital (UVA):
-            Saldo de capital (Pesos):
-            Saldo de capital (Dólares):
-            Saldo de interés (UVA):
-            Saldo de interés (Pesos):
-            Saldo de interés (Dólares):
-            Saldo de cuotas (UVA):
-            Saldo de cuotas (Pesos):
-            Saldo de cuotas (Dólares):
+            <label>Saldo de capital (UVA):</label><br>
+            <label>Saldo de capital (Pesos):</label><br>
+            <label>Saldo de capital (Dólares):</label><br>
+            <label>Saldo de interés (UVA):</label><br>
+            <label>Saldo de interés (Pesos):</label><br>
+            <label>Saldo de interés (Dólares):</label><br>
+            <label>Saldo de cuotas (UVA):</label><br>
+            <label>Saldo de cuotas (Pesos):</label><br>
+            <label>Saldo de cuotas (Dólares):</label><br>
         </div>
     </div>
 `;
