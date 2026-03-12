@@ -63,32 +63,34 @@ function simular() {
     const resultado = calcularPrepago(saldo, tasa, cuota, prepago);
 
     document.getElementById("resultado").innerHTML = `
-    <div class="flex items-stretch">
+    <div class="flex flex-col items-stretch">
         <h3>Resultado</h3>
-        <div class="p-1 m-1 border rounded-sm bg-white">
-            <h4>Previo al adelanto</h4>
-        </div>
-        <div class="p-1 m-1 border rounded-sm bg-white">
-            <h4>Adelanto</h4>
-            Capital precancelado: ${resultado.capitalReducido.toFixed(2)} UVA <br><br>
-            Costo por precancelación (3%): ${resultado.costoPrecancelacion.toFixed(2)} UVA <br>
-            Total que debés pagar al banco: <b>${resultado.totalAPagar.toFixed(2)} UVA</b> <br><br>
-            Interés restante sin prepago: ${resultado.interesNormal.toFixed(2)} UVA <br>
-            Interés restante con prepago: ${resultado.interesConPrepago.toFixed(2)} UVA <br><br>
-            Ahorro de intereses: <b>${resultado.interesAhorrado.toFixed(2)} UVA</b> <br><br>
-            Cuotas eliminadas: ${resultado.cuotasAhorradas}
-        </div>
-        <div class="p-1 m-1 border rounded-sm bg-white">
-            <h4>Luego del adelanto</h4>
-            <label>Saldo de capital (UVA):</label><br>
-            <label>Saldo de capital (Pesos):</label><br>
-            <label>Saldo de capital (Dólares):</label><br>
-            <label>Saldo de interés (UVA):</label><br>
-            <label>Saldo de interés (Pesos):</label><br>
-            <label>Saldo de interés (Dólares):</label><br>
-            <label>Saldo de cuotas (UVA):</label><br>
-            <label>Saldo de cuotas (Pesos):</label><br>
-            <label>Saldo de cuotas (Dólares):</label><br>
+        <div>
+            <div class="p-1 m-1 border rounded-sm bg-white">
+                <h4>Previo al adelanto</h4>
+            </div>
+            <div class="p-1 m-1 border rounded-sm bg-white">
+                <h4>Adelanto</h4>
+                Capital precancelado: ${resultado.capitalReducido.toFixed(2)} UVA <br><br>
+                Costo por precancelación (3%): ${resultado.costoPrecancelacion.toFixed(2)} UVA <br>
+                Total que debés pagar al banco: <b>${resultado.totalAPagar.toFixed(2)} UVA</b> <br><br>
+                Interés restante sin prepago: ${resultado.interesNormal.toFixed(2)} UVA <br>
+                Interés restante con prepago: ${resultado.interesConPrepago.toFixed(2)} UVA <br><br>
+                Ahorro de intereses: <b>${resultado.interesAhorrado.toFixed(2)} UVA</b> <br><br>
+                Cuotas eliminadas: ${resultado.cuotasAhorradas}
+            </div>
+            <div class="p-1 m-1 border rounded-sm bg-white">
+                <h4>Luego del adelanto</h4>
+                <label>Saldo de capital (UVA):</label><br>
+                <label>Saldo de capital (Pesos):</label><br>
+                <label>Saldo de capital (Dólares):</label><br>
+                <label>Saldo de interés (UVA):</label><br>
+                <label>Saldo de interés (Pesos):</label><br>
+                <label>Saldo de interés (Dólares):</label><br>
+                <label>Saldo de cuotas (UVA):</label><br>
+                <label>Saldo de cuotas (Pesos):</label><br>
+                <label>Saldo de cuotas (Dólares):</label><br>
+            </div>
         </div>
     </div>
 `;
