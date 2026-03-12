@@ -91,17 +91,17 @@ async function obtenerDolarOficial() {
 async function obtenerUVA() {
 
     const response = await fetch("https://api.argentinadatos.com/v1/finanzas/indices/uva");
-
     const data = await response.json();
-
     const ultimo = data[data.length - 1];
 
-    return ultimo.valor;
-
+    return {
+        valor: ultimo.valor,
+        fecha: ultimo.fecha
+    }
 }
 
 
-async function cargarIndicadores(){
+async function cargarIndicadores() {
 
     try {
 
@@ -111,7 +111,11 @@ async function cargarIndicadores(){
         document.getElementById("dolar-oficial").innerText = dolar.toFixed(2);
         document.getElementById("uva").innerText = uva.toFixed(2);
 
-    } catch(error) {
+        const fechaFormateada = new Date(uva.fecha).toLocaleDateString("es-AR");
+
+        document.getElementById("uva-fecha").innerText = fechaFormateada;
+
+    } catch (error) {
 
         console.error("Error cargando indicadores:", error);
 
