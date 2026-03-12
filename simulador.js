@@ -98,6 +98,7 @@ async function obtenerUVA() {
 
 }
 
+
 async function cargarIndicadores() {
 
     try {
