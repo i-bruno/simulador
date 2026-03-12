@@ -109,7 +109,7 @@ async function cargarIndicadores() {
         const uva = await obtenerUVA();
 
         document.getElementById("dolar-oficial").innerText = dolar.toFixed(2);
-        document.getElementById("uva").innerText = uva.toFixed(2);
+        document.getElementById("uva").innerText = uva.valor.toFixed(2);
 
         const fechaFormateada = new Date(uva.fecha).toLocaleDateString("es-AR");
 
