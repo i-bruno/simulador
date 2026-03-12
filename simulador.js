@@ -94,28 +94,27 @@ async function obtenerUVA() {
 
     const data = await response.json();
 
-    document.getElementById("uva-fecha").innerText = "(" + data.fecha + ")";
+    const ultimo = data[data.length - 1];
 
-    return data.valor;
+    return ultimo.valor;
+
 }
 
 
-async function cargarIndicadores() {
+async function cargarIndicadores(){
 
     try {
 
         const dolar = await obtenerDolarOficial();
         const uva = await obtenerUVA();
+
         document.getElementById("dolar-oficial").innerText = dolar.toFixed(2);
         document.getElementById("uva").innerText = uva.toFixed(2);
 
-    } catch (error) {
+    } catch(error) {
 
         console.error("Error cargando indicadores:", error);
-        document.getElementById("dolar-oficial").innerText = "error";
-        document.getElementById("uva").innerText = "error";
 
     }
 }
-
 cargarIndicadores();
