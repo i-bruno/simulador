@@ -81,12 +81,11 @@ function simular() {
 
 async function obtenerDolarOficial() {
 
-    const response = await fetch('https://dolarapi.com/v1/dolares/oficial');
+    const response = await fetch("https://dolarapi.com/v1/dolares/oficial");
     const data = await response.json();
 
-    const oficial = data.find(d => d.casa === "oficial");
+    return data.venta;
 
-    return oficial.venta;
 }
 
 async function cargarIndicadores(){
