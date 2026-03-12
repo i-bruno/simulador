@@ -64,11 +64,11 @@ function simular() {
 
     document.getElementById("resultado").innerHTML = `
     <div class="flex items-stretch">
-        <h>Resultado</h3>
-        <div class="m-1 border rounded-sm">
+        <h3>Resultado</h3>
+        <div class="m-1 border rounded-sm bg-white">
             <h4>Previo al adelanto</h4>
         </div>
-        <div class="m-1 border rounded-sm">
+        <div class="m-1 border rounded-sm bg-white">
             <h4>Adelanto</h4>
             Capital precancelado: ${resultado.capitalReducido.toFixed(2)} UVA <br><br>
             Costo por precancelación (3%): ${resultado.costoPrecancelacion.toFixed(2)} UVA <br>
@@ -78,7 +78,7 @@ function simular() {
             Ahorro de intereses: <b>${resultado.interesAhorrado.toFixed(2)} UVA</b> <br><br>
             Cuotas eliminadas: ${resultado.cuotasAhorradas}
         </div>
-        <div class="m-1 border rounded-sm">
+        <div class="m-1 border rounded-sm bg-white">
             <h4>Luego del adelanto</h4>
             <label>Saldo de capital (UVA):</label><br>
             <label>Saldo de capital (Pesos):</label><br>
