@@ -63,8 +63,11 @@ function simular() {
     const resultado = calcularPrepago(saldo, tasa, cuota, prepago);
 
     document.getElementById("resultado").innerHTML = `
-    <div class="flex flex-row items-stretch">
-        <h3>Resultado</h3>
+    <div class="flex flex-col items-stretch">
+        <div>    
+            <h3>Resultado</h3>
+        </div>
+        <div>
             <div class="p-1 m-1 border rounded-sm bg-white">
                 <h4>Previo al adelanto</h4>
             </div>
@@ -90,6 +93,7 @@ function simular() {
                 <label>Saldo de cuotas (Pesos):</label><br>
                 <label>Saldo de cuotas (Dólares):</label><br>
             </div>
+        </div>
     </div>
 `;
 }
