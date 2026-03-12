@@ -88,17 +88,30 @@ async function obtenerDolarOficial() {
 
 }
 
-async function cargarIndicadores(){
+async function obtenerUVA() {
+
+    const response = await fetch("https://api.argentinadatos.com/v1/finanzas/indices/uva");
+
+    const data = await response.json();
+
+    return data.valor;
+
+}
+
+async function cargarIndicadores() {
 
     try {
 
         const dolar = await obtenerDolarOficial();
+        const uva = await obtenerUVA();
         document.getElementById("dolar-oficial").innerText = dolar.toFixed(2);
+        document.getElementById("uva").innerText = uva.toFixed(2);
 
-    } catch(error) {
+    } catch (error) {
 
         console.error("Error cargando indicadores:", error);
         document.getElementById("dolar-oficial").innerText = "error";
+        document.getElementById("uva").innerText = "error";
 
     }
 }
