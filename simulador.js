@@ -70,34 +70,54 @@ function simular() {
         <div class="flex">
             <div class="p-1 m-1 border rounded-sm bg-[#f4cccc]">
                 <h4>Previo al adelanto</h4>
-                Capital (UVA):
-                Capital (Pesos):
-                Capital (Dólares):
-                Intereses (UVA):
-                Intereses (Pesos):
-                Intereses (Dólares):
-                Cuotas restantes:
+                Capital (UVA):<br>
+                <hr>
+                Capital (Pesos):<br>
+                <hr>
+                Capital (Dólares):<br>
+                <hr>
+                Intereses (UVA):<br>
+                <hr>
+                Intereses (Pesos):<br>
+                <hr>
+                Intereses (Dólares):<br>
+                <hr>
+                Cuotas restantes:<br>
             </div>
             <div class="p-1 m-1 border rounded-sm bg-[#fff2cc]">
                 <h4>Adelanto</h4>
-                Capital precancelado: ${resultado.capitalReducido.toFixed(2)} UVA <br><br>
+                Capital precancelado: ${resultado.capitalReducido.toFixed(2)} UVA <br>
+                <hr>
                 Costo por precancelación (3%): ${resultado.costoPrecancelacion.toFixed(2)} UVA <br>
-                Total que debés pagar al banco: <b>${resultado.totalAPagar.toFixed(2)} UVA</b> <br><br>
+                <hr>
+                Total que debés pagar al banco: <b>${resultado.totalAPagar.toFixed(2)} UVA</b> <br>
+                <hr>
                 Interés restante sin prepago: ${resultado.interesNormal.toFixed(2)} UVA <br>
-                Interés restante con prepago: ${resultado.interesConPrepago.toFixed(2)} UVA <br><br>
-                Ahorro de intereses: <b>${resultado.interesAhorrado.toFixed(2)} UVA</b> <br><br>
+                <hr>
+                Interés restante con prepago: ${resultado.interesConPrepago.toFixed(2)} UVA <br>
+                <hr>
+                Ahorro de intereses: <b>${resultado.interesAhorrado.toFixed(2)} UVA</b> <br>
+                <hr>
                 Cuotas eliminadas: ${resultado.cuotasAhorradas}
             </div>
             <div class="p-1 m-1 border rounded-sm bg-[#b7e1cd]">
                 <h4>Luego del adelanto</h4>
                 <label>Saldo de capital (UVA):</label><br>
+                <hr>
                 <label>Saldo de capital (Pesos):</label><br>
+                <hr>
                 <label>Saldo de capital (Dólares):</label><br>
+                <hr>
                 <label>Saldo de interés (UVA):</label><br>
+                <hr>
                 <label>Saldo de interés (Pesos):</label><br>
+                <hr>
                 <label>Saldo de interés (Dólares):</label><br>
+                <hr>
                 <label>Saldo de cuotas (UVA):</label><br>
+                <hr>
                 <label>Saldo de cuotas (Pesos):</label><br>
+                <hr>
                 <label>Saldo de cuotas (Dólares):</label><br>
             </div>
         </div>
