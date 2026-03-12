@@ -63,19 +63,34 @@ function simular() {
     const resultado = calcularPrepago(saldo, tasa, cuota, prepago);
 
     document.getElementById("resultado").innerHTML = `
-
-        Capital precancelado: ${resultado.capitalReducido.toFixed(2)} UVA <br><br>
-
-        Costo por precancelación (3%): ${resultado.costoPrecancelacion.toFixed(2)} UVA <br>
-        Total que debés pagar al banco: <b>${resultado.totalAPagar.toFixed(2)} UVA</b> <br><br>
-
-        Interés restante sin prepago: ${resultado.interesNormal.toFixed(2)} UVA <br>
-        Interés restante con prepago: ${resultado.interesConPrepago.toFixed(2)} UVA <br><br>
-
-        Ahorro de intereses: <b>${resultado.interesAhorrado.toFixed(2)} UVA</b> <br><br>
-
-        Cuotas eliminadas: ${resultado.cuotasAhorradas}
-
+    <div class="flex items-stretch">
+        <h>Resultado</h3>
+        <div class="m-1 border rounded-sm">
+            <h4>Previo al adelanto</h4>
+        </div>
+        <div class="m-1 border rounded-sm">
+            <h4>Adelanto</h4>
+            Capital precancelado: ${resultado.capitalReducido.toFixed(2)} UVA <br><br>
+            Costo por precancelación (3%): ${resultado.costoPrecancelacion.toFixed(2)} UVA <br>
+            Total que debés pagar al banco: <b>${resultado.totalAPagar.toFixed(2)} UVA</b> <br><br>
+            Interés restante sin prepago: ${resultado.interesNormal.toFixed(2)} UVA <br>
+            Interés restante con prepago: ${resultado.interesConPrepago.toFixed(2)} UVA <br><br>
+            Ahorro de intereses: <b>${resultado.interesAhorrado.toFixed(2)} UVA</b> <br><br>
+            Cuotas eliminadas: ${resultado.cuotasAhorradas}
+        </div>
+        <div class="m-1 border rounded-sm">
+            <h4>Luego del adelanto</h4>
+            Saldo de capital (UVA):
+            Saldo de capital (Pesos):
+            Saldo de capital (Dólares):
+            Saldo de interés (UVA):
+            Saldo de interés (Pesos):
+            Saldo de interés (Dólares):
+            Saldo de cuotas (UVA):
+            Saldo de cuotas (Pesos):
+            Saldo de cuotas (Dólares):
+        </div>
+    </div>
 `;
 }
 
