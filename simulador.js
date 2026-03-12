@@ -94,8 +94,9 @@ async function obtenerUVA() {
 
     const data = await response.json();
 
-    return data.valor;
+    document.getElementById("uva-fecha").innerText = "(" + data.fecha + ")";
 
+    return data.valor;
 }
 
 
