@@ -11,26 +11,26 @@
 
 <body class="bg-neutral-100 flex flex-col content-around items-center">
     <header class="m-1 items-center flex flex-col">
-        <h1>Simulador Precancelación Crédito UVA</h1>
+        <h1 class="font-bold">Simulador Precancelación Crédito UVA</h1>
     </header>
     <section class="p-1 m-1 items-center flex flex-col border rounded-sm bg-white w-fit">
-        <h2>Datos</h2>
+        <h2 class="font-bold">Datos</h2>
         <div class="m-1 items-center flex flex-col">
             <label>¿Cuál es el saldo actual (UVA) de mi capital?</label>
-            <input id="saldo">
+            <input id="saldo" class="border rounded-sm">
 
             <label>¿Cuál es la Tasa anual (%) de mi crédito?</label>
-            <input id="tasa">
+            <input id="tasa" class="border rounded-sm">
 
             <label>¿De cuantos UVAs es mi cuota?</label>
-            <input id="cuota">
+            <input id="cuota" class="border rounded-sm">
 
             <label>¿Cuántos UVA quiero pagar?</label>
-            <input id="prepago">
+            <input id="prepago" class="border rounded-sm">
 
             <button onclick="simular()">Simular</button>
         </div>
-        <h3>Indicadores hoy</h3>
+        <h3 class="font-bold">Indicadores hoy</h3>
 
         <div id="indicadores" class="flex flex-col bg-white">
             Dólar oficial:
