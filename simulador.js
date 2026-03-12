@@ -68,10 +68,17 @@ function simular() {
             <h3>Resultado</h3>
         </div>
         <div class="flex">
-            <div class="p-1 m-1 border rounded-sm bg-white">
+            <div class="p-1 m-1 border rounded-sm bg-[#f4cccc]">
                 <h4>Previo al adelanto</h4>
+                Capital (UVA):
+                Capital (Pesos):
+                Capital (Dólares):
+                Intereses (UVA):
+                Intereses (Pesos):
+                Intereses (Dólares):
+                Cuotas restantes:
             </div>
-            <div class="p-1 m-1 border rounded-sm bg-white">
+            <div class="p-1 m-1 border rounded-sm bg-[#fff2cc]">
                 <h4>Adelanto</h4>
                 Capital precancelado: ${resultado.capitalReducido.toFixed(2)} UVA <br><br>
                 Costo por precancelación (3%): ${resultado.costoPrecancelacion.toFixed(2)} UVA <br>
@@ -81,7 +88,7 @@ function simular() {
                 Ahorro de intereses: <b>${resultado.interesAhorrado.toFixed(2)} UVA</b> <br><br>
                 Cuotas eliminadas: ${resultado.cuotasAhorradas}
             </div>
-            <div class="p-1 m-1 border rounded-sm bg-white">
+            <div class="p-1 m-1 border rounded-sm bg-[#b7e1cd]">
                 <h4>Luego del adelanto</h4>
                 <label>Saldo de capital (UVA):</label><br>
                 <label>Saldo de capital (Pesos):</label><br>
