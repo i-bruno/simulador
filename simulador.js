@@ -1,3 +1,6 @@
+let valorUVA = 0;
+let valorDolar = 0;
+
 function simularCredito(saldo, tasaAnual, cuota) {
 
     const tasaMensual = tasaAnual / 12 / 100;
@@ -42,7 +45,7 @@ function calcularPrepago(saldo, tasa, cuota, prepago) {
     if (prepago < saldo) {
         costoPrecanc = prepago * 0.03;
     }
-    
+
     const totalPago = prepago + costoPrecanc;
 
     return {
@@ -59,6 +62,15 @@ function calcularPrepago(saldo, tasa, cuota, prepago) {
 
 function simular() {
 
+    const capitalPesos = saldo * valorUVA;
+    const capitalDolares = capitalPesos / valorDolar;
+
+    const interesPesos = escenarioNormal.interesTotal * valorUVA;
+    const interesDolares = interesPesos / valorDolar;
+
+    const cuotasRestantes = escenarioNormal.cuotas;
+
+
     const saldo = parseFloat(document.getElementById("saldo").value);
     const tasa = parseFloat(document.getElementById("tasa").value);
     const cuota = parseFloat(document.getElementById("cuota").value);
@@ -73,22 +85,30 @@ function simular() {
             <h3><b>Resultado</b></h3>
         </div>
         <div class="flex">
-            <div class="p-1 m-1 border rounded-sm bg-[#f4cccc]">
-                <h4><b>Previo al adelanto</b></h4>
-                <b>Capital (UVA):</b><br>
-                <hr>
-                <b>Capital (Pesos):</b><br>
-                <hr>
-                <b>Capital (Dólares):</b><br>
-                <hr>
-                <b>Intereses (UVA):</b><br>
-                <hr>
-                <b>Intereses (Pesos):</b><br>
-                <hr>
-                <b>Intereses (Dólares):</b><br>
-                <hr>
-                <b>Cuotas restantes:</b><br>
-            </div>
+<div class="p-1 m-1 border rounded-sm bg-[#f4cccc]">
+<h4><b>Previo al adelanto</b></h4>
+
+<b>Capital (UVA):</b> ${saldo.toFixed(2)}<br>
+<hr>
+
+<b>Capital (Pesos):</b> $${capitalPesos.toFixed(0)}<br>
+<hr>
+
+<b>Capital (Dólares):</b> USD ${capitalDolares.toFixed(2)}<br>
+<hr>
+
+<b>Intereses (UVA):</b> ${escenarioNormal.interesTotal.toFixed(2)}<br>
+<hr>
+
+<b>Intereses (Pesos):</b> $${interesPesos.toFixed(0)}<br>
+<hr>
+
+<b>Intereses (Dólares):</b> USD ${interesDolares.toFixed(2)}<br>
+<hr>
+
+<b>Cuotas restantes:</b> ${cuotasRestantes}<br>
+
+</div>
             <div class="p-1 m-1 border rounded-sm bg-[#fff2cc]">
                 <h4><b>Adelanto</b></h4>
                 <b>Capital precancelado:</b> ${resultado.capitalReducido.toFixed(2)} UVA <br>
@@ -153,6 +173,9 @@ async function obtenerUVA() {
 
 
 async function cargarIndicadores() {
+
+    valorDolar = dolar;
+    valorUVA = uva.valor;
 
     try {
 
