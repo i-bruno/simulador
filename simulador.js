@@ -1,6 +1,8 @@
 function simularCredito(saldo, tasaAnual, cuota) {
 
     const tasaMensual = tasaAnual / 12 / 100;
+    let interesTotal = 0;
+    let cuotas = 0;
 
     while (saldo > 0) {
 
