@@ -63,8 +63,13 @@ function simular() {
     const cuota = parseFloat(document.getElementById("cuota").value);
     const prepago = parseFloat(document.getElementById("prepago").value);
     const escenarioNormal = simularCredito(saldo, tasa, cuota);
-
     const resultado = calcularPrepago(saldo, tasa, cuota, prepago);
+    const totalCuotas = parseInt(document.getElementById("totalCuotas").value);
+    const cuotasPagadas = parseInt(document.getElementById("cuotasPagadas").value);
+
+    const cuotasRestantes = totalCuotas - cuotasPagadas;
+
+    escenarioNormal.cuotas = Math.min(escenarioNormal.cuotas, cuotasRestantes);
 
     document.getElementById("resultado").innerHTML = `
     <div class="flex flex-col items-stretch">
