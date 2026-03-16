@@ -2,9 +2,6 @@ function simularCredito(saldo, tasaAnual, cuota) {
 
     const tasaMensual = tasaAnual / 12 / 100;
 
-    let interesTotal = 0;
-    let cuotas = 0;
-
     while (saldo > 0) {
 
         let interes = saldo * tasaMensual;
@@ -59,66 +56,67 @@ function simular() {
     const tasa = parseFloat(document.getElementById("tasa").value);
     const cuota = parseFloat(document.getElementById("cuota").value);
     const prepago = parseFloat(document.getElementById("prepago").value);
+    const escenarioNormal = simularCredito(saldo, tasa, cuota);
 
     const resultado = calcularPrepago(saldo, tasa, cuota, prepago);
 
     document.getElementById("resultado").innerHTML = `
     <div class="flex flex-col items-stretch">
         <div class="text-center">    
-            <h3>Resultado</h3>
+            <h3><b>Resultado</b></h3>
         </div>
         <div class="flex">
             <div class="p-1 m-1 border rounded-sm bg-[#f4cccc]">
-                <h4>Previo al adelanto</h4>
-                Capital (UVA):<br>
+                <h4><b>Previo al adelanto</b></h4>
+                <b>Capital (UVA):</b><br>
                 <hr>
-                Capital (Pesos):<br>
+                <b>Capital (Pesos):</b><br>
                 <hr>
-                Capital (Dólares):<br>
+                <b>Capital (Dólares):</b><br>
                 <hr>
-                Intereses (UVA):<br>
+                <b>Intereses (UVA):</b><br>
                 <hr>
-                Intereses (Pesos):<br>
+                <b>Intereses (Pesos):</b><br>
                 <hr>
-                Intereses (Dólares):<br>
+                <b>Intereses (Dólares):</b><br>
                 <hr>
-                Cuotas restantes:<br>
+                <b>Cuotas restantes:</b><br>
             </div>
             <div class="p-1 m-1 border rounded-sm bg-[#fff2cc]">
-                <h4>Adelanto</h4>
-                Capital precancelado: ${resultado.capitalReducido.toFixed(2)} UVA <br>
+                <h4><b>Adelanto</b></h4>
+                <b>Capital precancelado:</b> ${resultado.capitalReducido.toFixed(2)} UVA <br>
                 <hr>
-                Costo por precancelación (3%): ${resultado.costoPrecancelacion.toFixed(2)} UVA <br>
+                <b>Costo por precancelación (3%):</b> ${resultado.costoPrecancelacion.toFixed(2)} UVA <br>
                 <hr>
-                Total que debés pagar al banco: <b>${resultado.totalAPagar.toFixed(2)} UVA</b> <br>
+                <b>Total que debés pagar al banco:</b> <b>${resultado.totalAPagar.toFixed(2)} UVA</b> <br>
                 <hr>
-                Interés restante sin prepago: ${resultado.interesNormal.toFixed(2)} UVA <br>
+                <b>Interés restante sin prepago:</b> ${resultado.interesNormal.toFixed(2)} UVA <br>
                 <hr>
-                Interés restante con prepago: ${resultado.interesConPrepago.toFixed(2)} UVA <br>
+                <b>Interés restante con prepago:</b> ${resultado.interesConPrepago.toFixed(2)} UVA <br>
                 <hr>
-                Ahorro de intereses: <b>${resultado.interesAhorrado.toFixed(2)} UVA</b> <br>
+                <b>Ahorro de intereses:</b> <b>${resultado.interesAhorrado.toFixed(2)} UVA</b> <br>
                 <hr>
-                Cuotas eliminadas: ${resultado.cuotasAhorradas}
+                <b>Cuotas eliminadas:</b> ${resultado.cuotasAhorradas}
             </div>
             <div class="p-1 m-1 border rounded-sm bg-[#b7e1cd]">
-                <h4>Luego del adelanto</h4>
-                <label>Saldo de capital (UVA):</label><br>
+                <h4><b>Luego del adelanto</b></h4>
+                <label><b>Saldo de capital (UVA):</b></label><br>
                 <hr>
-                <label>Saldo de capital (Pesos):</label><br>
+                <label><b>Saldo de capital (Pesos):</b></label><br>
                 <hr>
-                <label>Saldo de capital (Dólares):</label><br>
+                <label><b>Saldo de capital (Dólares):</b></label><br>
                 <hr>
-                <label>Saldo de interés (UVA):</label><br>
+                <label><b>Saldo de interés (UVA):</b></label><br>
                 <hr>
-                <label>Saldo de interés (Pesos):</label><br>
+                <label><b>Saldo de interés (Pesos):</b></label><br>
                 <hr>
-                <label>Saldo de interés (Dólares):</label><br>
+                <label><b>Saldo de interés (Dólares):</b></label><br>
                 <hr>
-                <label>Saldo de cuotas (UVA):</label><br>
+                <label><b>Saldo de cuotas (UVA):</b></label><br>
                 <hr>
-                <label>Saldo de cuotas (Pesos):</label><br>
+                <label><b>Saldo de cuotas (Pesos):</b></label><br>
                 <hr>
-                <label>Saldo de cuotas (Dólares):</label><br>
+                <label><b>Saldo de cuotas (Dólares):</b></label><br>
             </div>
         </div>
     </div>
