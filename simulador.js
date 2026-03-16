@@ -37,7 +37,12 @@ function calcularPrepago(saldo, tasa, cuota, prepago) {
 
     const cuotasAhorradas = escenarioNormal.cuotas - escenarioPrepago.cuotas;
 
-    const costoPrecanc = prepago * 0.03;
+    let costoPrecanc = 0;
+
+    if (prepago < saldo) {
+        costoPrecanc = prepago * 0.03;
+    }
+    
     const totalPago = prepago + costoPrecanc;
 
     return {
@@ -168,3 +173,19 @@ async function cargarIndicadores() {
     }
 }
 cargarIndicadores();
+
+const checkboxTotal = document.getElementById("cancelarTotal");
+const inputPrepago = document.getElementById("prepago");
+
+checkboxTotal.addEventListener("change", () => {
+
+    const saldo = parseFloat(document.getElementById("saldo").value) || 0;
+
+    if (checkboxTotal.checked) {
+        inputPrepago.value = saldo;
+        inputPrepago.disabled = true;
+    } else {
+        inputPrepago.disabled = false;
+    }
+
+});
