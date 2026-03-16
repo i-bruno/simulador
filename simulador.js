@@ -71,7 +71,7 @@ function simular() {
         <div class="text-center">    
             <h3><b>Resultado</b></h3>
         </div>
-        <div class="flex">
+        <div class="flex flex-col lg:flex-row">
             <div class="p-1 m-1 border rounded-sm bg-[#f4cccc]">
                 <h4><b>Previo al adelanto</b></h4>
                 <b>Capital (UVA):</b><br>
